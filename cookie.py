@@ -30,4 +30,16 @@ def get_most_active_cookie(log_file, date):
     result = [cookie for cookie, count in most_active_cookies if count == max_count]
     
     return result 
-                    
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('log_file', help='Path to the file log')
+    parser.add_argument('-d', '--date', help='The date for which to find the most active cookie(s) in 'YYYY-MM-DD' format', required = True)
+    args = parser.parse_args()
+    
+    most_active_cookies = get_most_active_cookie(args.log_file, args.date)
+    for cookie in most_active_cookies:
+        print(cookie)
+    
+if __name__ == '__main__':
+    main()
