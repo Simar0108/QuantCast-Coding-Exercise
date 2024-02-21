@@ -15,7 +15,7 @@ def get_most_active_cookie(log_file, date):
                 
                 if dt_date.isoformat() == date:
                     cookies[cookie] += 1
-                elif dt_date < datetime.fromisoformat(date).date()
+                elif dt_date < datetime.fromisoformat(date).date():
                     break
             except ValueError:
                 print(f"Invalid timestamp format in line: {timestamp}")
